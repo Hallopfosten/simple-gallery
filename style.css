@@ -12,17 +12,27 @@ body {
     width: 100%;
     height: 100%;
     font-size: 2em;
-    background-color: #333;
+    background-color: #222;
     color: ghostwhite;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-image: linear-gradient(#50574c, #4C4B39, #3b1f3d, #4C340C, #464C1C, #3B2C4C);
+}
+
+.gallery-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(#50574c, #4C4B39, #3b1f3d, #4C340C, #464C1C, #3B2C4C, #615a4e, #4d4830, #68573c);
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
 }
 
 .gallery {
     display: flex;
+    /* width: 70vw; */
     flex-direction: column;
     box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
 }
@@ -47,6 +57,7 @@ body {
 .img {
     margin-bottom: 20px;
     max-width: 70vw;
+    min-width: 70vw;
     cursor: pointer;
 }
 
@@ -56,17 +67,16 @@ body {
 
 .start {
     width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #131313;
-    box-shadow: 0px 0px 10px 0px black;
+    box-shadow: 0px 0px 5px 0px #00000040;
 }
 
 .start>* {
     margin: 0 2.5em;
-    ;
 }
 
 .start>div {
@@ -78,8 +88,19 @@ body {
     color: beige;
 }
 
-.start>img {
-    max-width: 50vw;
+.start-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 70vw;
+    max-width: 70vw;
+    background-image: linear-gradient(#00000041, #00000041), url("img/start.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 footer {
@@ -157,14 +178,19 @@ input[type='button']:active,
     transform: translate(-100%, 5px);
 }
 
+.back-to-top:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .hidden {
     display: none;
 }
 
 .magnify {
     position: fixed;
-    max-width: 90vw;
-    min-width: 90vw;
+    max-width: 95vw;
+    min-width: 95vw;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -188,7 +214,6 @@ input[type='button']:active,
         font-size: 1.5em;
     }
     .start {
-        flex-direction: column;
         font-size: medium;
     }
 }

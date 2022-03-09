@@ -1,9 +1,12 @@
 const backUpBtn = document.getElementById("backUp");
+const backToTop = document.getElementById("backToTop");
 const images = document.getElementsByClassName("img");
 const blocker = document.getElementById("blocker");
 
 backUpBtn.addEventListener("click", topFunction);
+backToTop.addEventListener("click", topFunction);
 
+// "scroll to top"-button
 window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
@@ -19,6 +22,7 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
 
+// magnify images
 Array.from(images).forEach(element => {
     element.addEventListener("click", () => {
         if (element.classList.contains("magnify")) {
@@ -54,9 +58,8 @@ function removeMagnify(element) {
     enableScroll();
 }
 
-// left: 37, up: 38, right: 39, down: 40,
-// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-var keys = { 37: 1, 38: 1, 39: 1, 40: 1, 32: 1, 33: 1, 34: 1, 35: 1, 36: 1 };
+// disable scrolling while image is magnified 
+const keys = { 37: 1, 38: 1, 39: 1, 40: 1, 32: 1, 33: 1, 34: 1, 35: 1, 36: 1 };
 
 function preventDefault(e) {
     e.preventDefault();
