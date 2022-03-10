@@ -17,11 +17,22 @@
         <div class="start-wrapper">
             <h1 class="title">Gallery</h1>
             <p class="text">by me</p>
-            <input type="button" onClick="document.querySelector('[data-gallery]').scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'} );" value="Go to images" />
+            <input class="btn" type="button"
+                onClick="document.querySelector('[data-gallery]').scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'} );"
+                value="Go to images" />
         </div>
     </section>
     <section class="blocker" id="blocker"></section>
-    <section class="gallery-wrapper">
+    <header id="header">
+        <section class="header-content">
+            <h3>This is a Header</h3>
+            <section class="bar-wrapper">
+                <p class="description">Thats it</p>
+                <p class="link description to-bottom" id="toBottom">To Bottom</p>
+            </section>
+        </section>
+    </header>
+    <section class="gallery-wrapper" id="galleryWrapper">
         <section class="gallery" data-gallery>
             <div class="container img1">
                 <img src="img/image1.webp" alt="abstrakes Bild" class="img">
@@ -68,15 +79,20 @@
                 <h3 class="label">Abstrakt 9</h3>
                 <p class="description">krasses abstraktes Meisterwerk</p>
             </div>
-            <button class="back-up hidden" id="backUp"><svg xmlns="http://www.w3.org/2000/svg" width="32px"height="32px" viewBox="0 0 1024 768" class="icon"><path d="M104.704 685.248a64 64 0 0090.496 0l316.8-316.8 316.8 316.8a64 64 0 0090.496-90.496L557.248 232.704a64 64 0 00-90.496 0L104.704 594.752a64 64 0 000 90.496z" /></svg></button>
-
+            <button class="btn back-up" id="backUp"><svg xmlns="http://www.w3.org/2000/svg" width="32px" height="32px"
+                    viewBox="0 0 1024 768" class="icon">
+                    <path
+                        d="M104.704 685.248a64 64 0 0090.496 0l316.8-316.8 316.8 316.8a64 64 0 0090.496-90.496L557.248 232.704a64 64 0 00-90.496 0L104.704 594.752a64 64 0 000 90.496z" />
+                </svg></button>
         </section>
     </section>
-    <footer>
+    <footer id="footer">
         <section class="footer-content">
             <h3>This is a footer</h3>
-            <p class="description">Thats it</p>
-            <p class="back-to-top" id="backToTop">Back to top</p>
+            <section class="bar-wrapper">
+                <p class="description">Thats it</p>
+                <p class="description link back-to-top" id="backToTop">Back to top</p>
+            </section>
         </section>
     </footer>
 </body>

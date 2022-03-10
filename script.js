@@ -1,12 +1,22 @@
 const backUpBtn = document.getElementById("backUp");
 const backToTop = document.getElementById("backToTop");
+const toBottom = document.getElementById("toBottom");
 const images = document.getElementsByClassName("img");
 const blocker = document.getElementById("blocker");
+var header = document.getElementById("header");
+var sticky = header.offsetTop - header.offsetHeight;
+const gallery = document.getElementById("galleryWrapper");
 
 backUpBtn.addEventListener("click", topFunction);
 backToTop.addEventListener("click", topFunction);
+toBottom.addEventListener("click", bottomFunction);
 
-// "scroll to top"-button
+window.onresize = function () {
+    document.getElementById("header");
+    sticky = header.offsetTop - header.offsetHeight
+};
+
+// "scroll to top/bottom"-button
 window.onscroll = function () { scrollFunction() };
 
 function scrollFunction() {
@@ -15,11 +25,22 @@ function scrollFunction() {
     } else {
         backUpBtn.style.display = "none";
     }
+    if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+        gallery.style.paddingTop = header.offsetHeight + "px";
+    } else {
+        header.classList.remove("sticky");
+        gallery.style.paddingTop = 0
+    }
 }
 
 function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+}
+
+function bottomFunction() {
+    document.getElementById("footer").scrollIntoView();
 }
 
 // magnify images
