@@ -4,6 +4,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+:root {
+    --color-btn-main: #01a063;
+    --color-btn-main-font: ghostwhite;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -156,8 +161,8 @@ header {
 }
 
 .btn {
-    background-color: #04AA6D;
-    color: beige;
+    background-color: var(--color-btn-main);
+    color: var(--color-btn-main-font);
     border: none;
     border-radius: 5px;
     display: flex;
@@ -186,7 +191,7 @@ input[type='button'] {
 
 .back-up>svg {
     transform: scale(1.1);
-    fill: beige;
+    fill: var(--color-btn-main-font);
 }
 
 .btn:hover {
